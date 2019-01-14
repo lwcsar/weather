@@ -1,0 +1,171 @@
+@CHARSET "UTF-8";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #345995;
+}
+body > img {
+  max-width: 100%;
+  margin-top: 140px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.navbar-default {
+  margin-bottom: 0;
+  background-color: #272932;
+  border-color: transparent;
+  padding: 10px 0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #e55812;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #e55812;
+}
+.navbar-brand {
+  padding: 0 15px;
+  margin-right: 30px;
+}
+.navbar-brand > img {
+  height: 50px;
+}
+.navbar-nav {
+  font-size: 20px;
+}
+
+.overlay:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  background-color: rgba(39, 41, 50, 0.7);
+}
+.intro {
+  background: url('Belize-laughing-bird-caye-island.jpg') no-repeat;
+  /*center right no-repeat fixed; */
+  background-position: right center;
+  width: 100%;
+  position: relative;
+}
+.intro .slogan {
+  padding: 30px 0 30px;
+  text-align: center;
+}
+.intro .slogan .slogan-text {
+  background: rgba(39, 41, 50, 0.7);  
+  padding: 10px 0;
+}
+.intro .slogan h1 {
+  color: #e7ecef;
+  line-height: 1em;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+.intro .slogan p {
+  color: #e7ecef;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+#about {
+  background-color: #345995;
+  color: #e7ecef;
+}
+
+.weather {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  display: block;
+  position: relative;
+  z-index: 120;
+}
+.weather-block {
+    padding: 30px 10px;
+    border: 1px solid #aeaeae;
+}
+.weather-block .weather-heading {
+    font-size: 40px;
+    
+}
+.weather-block .weather-item {
+    font-size: 60px;
+}
+.graphs {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    position: relative;
+    z-index: 110;
+}
+.diagram {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    position: relative;
+    z-index: 110;
+    font-size: 32px;
+}
+.inputs {
+    color: green;
+    font-size: 28px;
+}
+.raspberry {
+    color: violet;
+}
+.server {
+    color: #345995;
+}
+.user {
+    color: red;
+    vertical-align: bottom;
+}
+.arrow {
+    margin: 0;
+    /*font-size: 120px;*/
+    color: #666666;
+    vertical-align: middle;
+}
+footer {
+  text-align: center;
+  padding: 50px 0 ;
+  background-color: #333333;
+  color: #fff;
+}
+footer p {
+  color: #f8f8f8;
+}
+footer a {
+  color: #fefefe;
+}
+footer a:hover {
+  color: #fff;
+}
