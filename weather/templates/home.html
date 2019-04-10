@@ -46,7 +46,9 @@
             <div class="col-md-4"> <!-- block 1 (left) -->
                 <div class="weather-block rounded">
                     <p class="weather-heading">Temperature</p>
-                    <p class="weather-item">72&deg;</p>
+                    <p class="weather-item">{{ temp.fahrenheit|floatformat:1 }}&deg;F <span class="weather-sub">{{ temp.celsius|floatformat:1 }}&deg;C</span></p>
+                    <p style="font-size:small">Last updated: {{ temp.recorded_time }}</p>
+                    <p style="font-size:small">{{ tcount }} readings since {{ tfirst }}</p>
                 </div>
             </div>
             <div class="col-md-4"> <!-- block 2 (middle) -->
