@@ -54,13 +54,17 @@
             <div class="col-md-4"> <!-- block 2 (middle) -->
                 <div class="weather-block rounded">
                     <p class="weather-heading">Humidity</p>
-                    <p class="weather-item">54%</p>
+                    <p class="weather-item">{{ humidity.humidity|floatformat:1 }}</p>
+                    <p style="font-size:small">Last updated: {{ humidity.recorded_time }}</p>
+                    <p style="font-size:small">{{ hcount }} readings since {{ hfirst }}</p>
                 </div>
             </div>
             <div class="col-md-4"> <!-- block 3 (right) -->
                 <div class="weather-block rounded">
-                    <p class="weather-heading">Time</p>
-                    <p class="weather-item">11:59 a.m.</p>
+                    <p class="weather-heading">Air Pressure</p>
+                    <p class="weather-item">{{ pressure.pressure|floatformat:1 }}</p>
+                    <p style="font-size:small">Last updated: {{ pressure.recorded_time }}</p>
+                    <p style="font-size:small">{{ pcount }} readings since {{ pfirst }}</p>
                 </div>
             </div>
         </div>
@@ -70,27 +74,66 @@
         <div class="row"> <!-- this horizontal row will hold our weather display -->
             <div class="col-md-4"> <!-- block 1 (left) -->
                 <div class="weather-block rounded">
-                    [7 day temperature graph]
+                    
+        <canvas id="tempChart" width="500" height="400"></canvas>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        <script type="text/javascript">
+            $.get('/chart/temp', function(data) {
+                var ctx = $("#tempChart").get(0).getContext("2d");
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        responsive: true
+                    }
+                });
+            });
+        </script>
                 </div>
             </div>
             <div class="col-md-4"> <!-- block 2 (middle) -->
                 <div class="weather-block rounded">
-                    [7 day humidity graph]
+                    
+        <canvas id="rhChart" width="500" height="400"></canvas>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        <script type="text/javascript">
+            $.get('/chart/rh', function(data) {
+                var ctx = $("#rhChart").get(0).getContext("2d");
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        responsive: true
+                    }
+                });
+            });
+        </script>
                 </div>
             </div>
             <div class="col-md-4"> <!-- block 3 (right) -->
                 <div class="weather-block rounded">
-                    [something else?]
+                    
+        <canvas id="bpChart" width="500" height="400"></canvas>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        <script type="text/javascript">
+            $.get('/chart/bp', function(data) {
+                var ctx = $("#bpChart").get(0).getContext("2d");
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        responsive: true
+                    }
+                });
+            });
+        </script>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="details" class="container weather">
-        <div class="row">
-            <div class="col-md-12">
-            <p>Temperature captured X number of times since Jan 1, 1969 00:00</p>
-            <p>Humidity captured Y number of times since Jan 1, 1969 00:00</p>
             </div>
         </div>
     </div>
