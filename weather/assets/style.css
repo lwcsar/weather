@@ -119,6 +119,11 @@ p {
 .weather-block .weather-item {
     font-size: 60px;
 }
+.weather-block .weather-item .weather-sub {
+    font-size: 12px;
+    margin:0;
+    padding:0;
+}
 .graphs {
     padding-top: 20px;
     padding-bottom: 20px;
